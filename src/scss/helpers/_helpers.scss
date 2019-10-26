@@ -1,0 +1,33 @@
+@import './functions';
+
+.text {
+  &-center {
+    text-align: center;
+  }
+
+  &-left {
+    text-align: right;
+  }
+
+  &-right {
+    text-align: right;
+  }
+}
+
+.pull {
+  &-left {
+    float: left;
+  }
+
+  &-right {
+    float: right;
+  }
+}
+
+.clear {
+  clear: both;
+
+  &fix {
+    @include clearfix;
+  }
+}

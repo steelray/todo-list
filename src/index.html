@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+
+<body>
+  <header class="header">
+    <div class="container">
+      <form class="todo-form" id="todoForm">
+        <div class="mdc-text-field default-form-field my-surface mdc-text-field--input">
+          <input required id="description" class="mdc-text-field__input" name="description">
+          <div class="mdc-notched-outline">
+            <div class="mdc-notched-outline__leading"></div>
+            <div class="mdc-notched-outline__notch">
+              <label for="description" class="mdc-floating-label">Todo description</label>
+            </div>
+            <div class="mdc-notched-outline__trailing"></div>
+          </div>
+        </div>
+        <div class="todo-form__row">
+          <div class="todo-form__col">
+            <div class="mdc-text-field default-form-field my-surface mdc-text-field--input">
+              <input id="startTime" required class="mdc-text-field__input datetimepicker" name="startTime">
+              <div class="mdc-notched-outline">
+                <div class="mdc-notched-outline__leading"></div>
+                <div class="mdc-notched-outline__notch">
+                  <label for="startTime" class="mdc-floating-label">Start time</label>
+                </div>
+                <div class="mdc-notched-outline__trailing"></div>
+              </div>
+            </div>
+          </div>
+          <div class="todo-form__col">
+            <div class="mdc-text-field default-form-field my-surface mdc-text-field--input">
+              <input id="executionTime" required class="mdc-text-field__input datetimepicker" name="executionTime">
+              <div class="mdc-notched-outline">
+                <div class="mdc-notched-outline__leading"></div>
+                <div class="mdc-notched-outline__notch">
+                  <label for="executionTime" class="mdc-floating-label">Execution time</label>
+                </div>
+                <div class="mdc-notched-outline__trailing"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="todo-form__action">
+          <button class="mdc-button mdc-button--raised my-surface">Add</button>
+        </div>
+      </form>
+
+    </div>
+  </header>
+  <main class="content">
+    <div class="container">
+      <table class="todo-table" id="todoList">
+        <thead>
+          <tr>
+            <th>Status</th>
+            <th>Description</th>
+            <th>Start time</th>
+            <th>Execution time</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody id="todoTableContent">
+          <!-- <tr>
+            <td>
+              <div class="mdc-checkbox todo-table__status">
+                <input type="checkbox" class="mdc-checkbox__native-control" id="checkbox-1" />
+                <div class="mdc-checkbox__background">
+                  <svg class="mdc-checkbox__checkmark" viewBox="0 0 24 24">
+                    <path class="mdc-checkbox__checkmark-path" fill="none" d="M1.73,12.91 8.1,19.28 22.79,4.59" />
+                  </svg>
+                  <div class="mdc-checkbox__mixedmark"></div>
+                </div>
+              </div>
+            </td>
+            <td>
+              <div class="todo-table__description">
+                <span contenteditable='false'>test as asd asd asd asd a</span>
+              </div>
+            </td>
+            <td>
+              24 oct. 2019 23:15
+            </td>
+            <td>
+              25 oct. 2019 23:15
+            </td>
+            <td>
+              <button class="mdc-button mdc-button--danger todo-table__delete">Delete</button>
+            </td>
+          </tr> -->
+
+        </tbody>
+
+      </table>
+    </div>
+  </main>
+</body>
+
+</html>
