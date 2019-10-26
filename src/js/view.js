@@ -19,6 +19,13 @@ export default class View {
     return cb(data);
   }
 
+  // reset for after todo added
+  resetForm() {
+    const form = document.querySelector(this.domsClassName.form);
+    // @ts-ignore
+    form.reset();
+  }
+
   // get all tags value wich has "name" attribute
   getFormData(form) {
     const children = form.querySelectorAll('[name]');

@@ -9,7 +9,7 @@ export default class Model {
     return JSON.parse(localStorage.getItem('todoList')) || [];
   }
 
-  addTodo(data) {
+  addTodo(data, resetForm) {
     const newID = this.items.length ? this.items[this.items.length - 1].id + 1 : 1;
     const {
       description,
@@ -26,6 +26,7 @@ export default class Model {
     });
     this.onItemsChanged(this.items);
     this.saveItems();
+    resetForm();
   }
 
   deleteTodo(id, cb) {
