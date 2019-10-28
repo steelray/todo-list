@@ -19,8 +19,8 @@ export default class Model {
     this.items.push({
       id: newID,
       description,
-      startTime: new Date(startTime).getTime(),
-      executionTime: new Date(executionTime).getTime(),
+      startTime: startTime,
+      executionTime: executionTime,
       status: false,
       executedTime: null
     });

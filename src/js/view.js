@@ -3,8 +3,15 @@ import {
   initMDCRipple
 } from "./scripts";
 import moment from "moment";
+import {
+  MDCSnackbar
+} from "@material/snackbar";
 
 export default class View {
+
+  constructor() {
+    this.snackbar = new MDCSnackbar(document.querySelector('.mdc-snackbar'));
+  }
 
   get domsClassName() {
     return {
@@ -24,6 +31,9 @@ export default class View {
     const form = document.querySelector(this.domsClassName.form);
     // @ts-ignore
     form.reset();
+    this.snackbar.labelText = 'Your task added!';
+    this.snackbar.actionButtonText = 'close';
+    this.snackbar.open();
   }
 
   // get all tags value wich has "name" attribute
@@ -31,7 +41,16 @@ export default class View {
     const children = form.querySelectorAll('[name]');
     const data = [];
     for (const child of Object.values(children)) {
-      data[child.getAttribute('name')] = child.value;
+      let value = child.value;
+      if (child.getAttribute('name') === 'startTime' || child.getAttribute('name') === 'executionTime') {
+        value = new Date(value).getTime();
+      }
+      data[child.getAttribute('name')] = value;
+    }
+    if (data['startTime'] > data['executionTime']) {
+      this.snackbar.labelText = 'Start time can not be greater execution time!';
+      this.snackbar.open();
+      return;
     }
     return data;
   }

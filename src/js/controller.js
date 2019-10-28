@@ -43,7 +43,9 @@ export default class Controller {
   bindAddTodo(data) {
     // console.log(this.model.items);
     // return;
-    this.model.addTodo(data, this.view.resetForm.bind(this.view));
+    if (data) {
+      this.model.addTodo(data, this.view.resetForm.bind(this.view));
+    }
   }
 
   // get deleted todo id 
